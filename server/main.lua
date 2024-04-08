@@ -22,12 +22,20 @@ RegisterCommand('canjearcodigo', function(source, args)
 
     if not discord then
         ESX.ShowNotification(src, "Debes tener tu Discord vinculado para canjear códigos.")
-        
+
         return 
     end
 
     PerformHttpRequest(WEBSITE_URL, function (errorCode, resultData, resultHeaders, errorData)
-        
+        if errorCode ~= 200 then
+            ESX.ShowNotification(src, "El código no es válido o ya ha sido canjeado.")
+
+            return 
+        end
+
+        local data = json.decode(resultData)
+
+        print(resultData)
     end, 'POST', json.encode({
         code = code,
         secret = WEBSITE_SECRET
