@@ -7,17 +7,24 @@ RegisterCommand('canjearcodigo', function(source, args)
         return 
     end
 
+    if not args[1] then
+        ESX.ShowNotification(src, "Debes introducir un código.")
+    end
+
+    local code = args[1]
     local Player = ESX.GetPlayerFromId(src)
 
     if not Player then
         return 
     end
 
-    if not args[1] then
-        ESX.ShowNotification(src, "Debes introducir un código.")
-    end
+    local discord = getPlayerDiscord(src)
 
-    local code = args[1]
+    if not discord then
+        ESX.ShowNotification(src, "Debes tener tu Discord vinculado para canjear códigos.")
+        
+        return 
+    end
 
     PerformHttpRequest(WEBSITE_URL, function (errorCode, resultData, resultHeaders, errorData)
         
