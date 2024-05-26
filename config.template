@@ -1,0 +1,16 @@
+Config = {
+    Command = "canjearcodigo",
+    VIPAccount = "vip",
+
+    Website = {
+        URL = "WEBSITE_URL/api/redeem",
+        Secret = "WEBSITE_SECRET"
+    },
+    
+    Translations = {
+        ["invalid_code"] = "El código no es válido o ya ha sido canjeado.",
+        ["no_code"] = "Debes introducir un código.",
+        ["no_discord"] = "Debes tener tu Discord vinculado para canjear códigos.",
+        ["claimed_code"] = "¡Has canjeado el código con éxito!"
+    }
+}

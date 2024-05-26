@@ -17,18 +17,13 @@ git clone https://github.com/Xavimc04/code-redeem.git
 ```
 
 2. Drop the script into your server resources
-3. Create config file
+3. Replace config.template by
 
 ```
 config.lua
 ```
 
-4. Complete config data
-
-```lua
-local WEBSITE_URL = "https://xaviermorell.es"
-local WEBSITE_SECRET = "INTRODUCE_YOUR_SECRET_HERE"
-```
+4. Complete config data like website URL or website secret
 
 ## Author
 
